@@ -9,9 +9,13 @@ public class LinkedListPractice <T> {
     public void push(T data) {
         Node<T> newNode = new Node(data);
         if (head == null) {
+        	// If the Linked List is empty, 
+            // then make the new node as head 
             head = newNode;
             tail = newNode;
         }else{
+        	// Else traverse till the last node 
+            // and insert the new_node there
             newNode.next = head;
             head = newNode;
         }
@@ -28,9 +32,23 @@ public class LinkedListPractice <T> {
         	current =current.next;
         	
         }
+     // Insert the new_node at last node 
         current.next=newNode;
 
     }
+   public void insert(T key) {
+	  
+	   Node<T> temptail=head.next;
+	  Node<T> newNode = new Node(key);
+	  head.next=newNode;
+	  newNode.next=temptail;
+	  
+	  
+	  
+	  
+	  
+	  //return;	   
+   }
    
     public void display() {
         Node<T> temp = head;
