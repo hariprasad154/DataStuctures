@@ -12,6 +12,5 @@ public class LinkedListPracticeMain {
     linkedList1.push(56);
 
     linkedList1.display();
-
 }
 }
