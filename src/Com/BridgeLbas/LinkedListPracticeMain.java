@@ -32,5 +32,15 @@ public class LinkedListPracticeMain {
     linkedList2.pop();
     linkedList2.display();
     
+    System.out.println("the list-1");
+    
+    System.out.println(linkedList1.popLast());
+    linkedList1.display();
+    System.out.println("the list-3");    
+    linkedList3.display();
+    
+    
+    linkedList3.search(56);
+    
 }
 }

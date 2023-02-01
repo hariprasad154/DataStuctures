@@ -5,7 +5,6 @@ public class LinkedListPractice <T> {
 
 	Node<T> head;
 	Node<T> tail;
-
 	public void push(T data) {
 		Node<T> newNode = new Node(data);
 		if (head == null) {
@@ -37,29 +36,28 @@ public class LinkedListPractice <T> {
 
 	}
 	public void insert(T key) {
-
 		Node<T> temptail=head.next;
 		Node<T> newNode = new Node(key);
 		head.next=newNode;
 		newNode.next=temptail;
 	}
-
 	public void pop() {
 		// Store head node
-
 		Node<T> currentNode = head;
-
 		head=currentNode.next;
-		// 	if (currentNode != null && currentNode.data==currentNode) {
-		// 		head=currentNode.next;//change the head
-		// 		//Display message
-		// 		System.out.println(currentNode.data+"- key fount and deleted");
-		// 		
-		// 	}
 		return;
-
 	}
-
+	public T popLast() {
+        T popData = tail.data;
+        Node<T> temp = head;
+        while (temp.next != tail) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        tail = temp;
+        return popData;
+    }
+	
 	public void display() {
 		Node<T> temp = head;
 		while(temp!=null){
