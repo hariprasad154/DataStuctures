@@ -66,7 +66,19 @@ public class LinkedListPractice <T> {
         }
         return null;
     }
-	
+	public boolean insertAfter(T insertData ,T searchData) {
+		Node<T> searchedData =  search(searchData);
+	       if(searchedData != null){
+	           Node<T> newNode = new Node(insertData);
+	           Node<T> nextNode = searchedData.next;
+	           searchedData.next = newNode;
+	           newNode.next = nextNode;
+	           return true;
+	       }
+	       return false;
+		
+		
+	}
 	public void display() {
 		Node<T> temp = head;
 		while(temp!=null){
