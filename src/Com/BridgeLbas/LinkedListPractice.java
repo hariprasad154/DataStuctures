@@ -48,25 +48,35 @@ public class LinkedListPractice <T> {
 		return;
 	}
 	public T popLast() {
-        T popData = tail.data;
-        Node<T> temp = head;
-        while (temp.next != tail) {
-            temp = temp.next;
-        }
-        temp.next = null;
-        tail = temp;
-        return popData;
-    }
+		T popData = tail.data;
+		Node<T> temp = head;
+		while (temp.next != tail) {
+			temp = temp.next;
+		}
+		temp.next = null;
+		tail = temp;
+		return popData;
+	}
 	public Node<T> search(T searchData) {
-        Node<T> temp = head;
-        while (temp != null) {
-           if(temp.data.equals(searchData))
-               return temp;
-            temp = temp.next;
-        }
-        return null;
-    }
-	
+		Node<T> temp = head;
+		while (temp != null) {
+			if(temp.data.equals(searchData))
+				return temp;
+			temp = temp.next;
+		}
+		return null;
+	}
+	public boolean insertAfter(T insertData ,T searchData) {
+		Node<T> searchedData =  search(searchData);
+		if(searchedData != null){
+			Node<T> newNode = new Node(insertData);
+			Node<T> nextNode = searchedData.next;
+			searchedData.next = newNode;
+			newNode.next = nextNode;
+			return true;
+		}
+		return false;	
+	}
 	public void display() {
 		Node<T> temp = head;
 		while(temp!=null){

@@ -41,6 +41,9 @@ public class LinkedListPracticeMain {
     
     
     linkedList3.search(56);
+    linkedList3.insertAfter(56,40 );
+    linkedList3.display();
+    
     
 }
 }
